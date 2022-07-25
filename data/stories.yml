@@ -1,0 +1,68 @@
+version: '2.0'
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: play_song
+      - action: utter_emotion
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: function path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: play_song
+      - action: utter_emotion
+
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: play_song
+      - action: utter_emotion
+      - intent: happy_emotion
+      - action: action_happ
+
+  - story: sad path
+    steps:
+      - intent: play_song
+      - action: utter_emotion
+      - intent: sad_emotion
+      - action: action_sad
+
+  - story: surprise path
+    steps:
+      - intent: surprise_emotion
+      - action: action_surprise
+
+  - story: anger path
+    steps:
+      - intent: anger_emotion
+      - action: action_anger
+
+  - story: fear path
+    steps:
+      - intent: fear_emotion
+      - action: action_fear
+
+  - story: deny path
+    steps:
+      - intent: deny
+      - action: utter_goodbye
+      - intent: goodbye
+      - action: utter_goodbye
